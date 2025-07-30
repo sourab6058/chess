@@ -31,8 +31,6 @@ class Piece {
     this.img.height = this.board.squareSize;
   }
 
-  #resizeImg() {}
-
   draw() {
     this.board.ctx.drawImage(
       this.img,
