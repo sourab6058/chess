@@ -23,12 +23,20 @@ class Piece {
 
     const imgName =
       color + "-" + this.piece.split(color)[1].toLowerCase() + ".png";
-    const imgPath = "/assets/" + imgName;
+    const imgPath = "assets/" + imgName;
 
     this.img = new Image();
     this.img.src = imgPath;
     this.img.width = this.board.squareSize;
     this.img.height = this.board.squareSize;
+  }
+  #getWhitePawnLegalMoves() {}
+
+  #getLegalMoves() {
+    switch (this.piece) {
+      case Piece.WHITE_PAWN:
+        return this.#getWhitePawnLegalMoves();
+    }
   }
 
   draw() {
